@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
+    <script src="./angular.min.js"></script>
+    <script src="./bai1.js"></script>
+</head>
+<body>
+    <div class="container" ng-app="myapp" ng-controller="myctrl">
+        <div class="card">
+            <div class="card-header">
+                <h2 class="card-title">TÍNH THƯỞNG TẾT NGUYÊN ĐÁN</h2>
+            </div>
+            <form class="card-body" name="frmBonus">
+                <div class="form-group">
+                    <label><b>Họ và tên</b></label>
+                    <input class="form-control" ng-model="fullname" name="txtFullname" required>
+                    <span ng-show="frmBonus.txtFullname.$invalid" class="text-danger">
+                        Vui lòng nhập họ và tên
+                    </span>
+                </div>
+                <div class="form-group">
+                    <label><b>Lương</b></label>
+                    <div class="input-group">
+                        <input class="form-control" ng-model="salary" name="txtSalary" type="number" min="2000000">
+                        <div class="input-group-addon card " style="background-color:rgb(236, 227, 227)">VNĐ</div>
+                    </div>
+                    <span ng-show="frmBonus.txtSalary.$invalid" class="text-danger">
+                        Lương ít nhất 2 triệu
+                    </span>
+                </div>
+                <div class="form-group">
+                    <label><b>Giới tính</b></label>
+                    <div class="radio">
+                        <label><input type="radio" ng-model="gender" value="NAM">Nam</label>
+                        <label><input type="radio" ng-model="gender" value="NU">Nữ</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label><b>Độ tuổi</b></label>
+                    <select class="form-control" ng-model="age" ng-options="x.age for x in ages"></select>
+                </div>
+                <h4 ng-show="frmBonus.$valid" class="text-success">
+                    Chúc mừng bạn đã nhập đúng
+                </h4>
+            </form>
+            <div class="card-footer">
+                    TIỀN THƯỞNG: <strong>{{getBonus() | number: 2}}</strong> VNĐ
+            </div>
+        </div>
+    </div>
+</body>
+</html>

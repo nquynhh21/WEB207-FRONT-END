@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./angular.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body ng-app="myapp">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6 offset-sm-3">
+                <div class="card">
+                    <div class="card-header">
+                        CUSTOM VALIDATION
+                    </div>
+                    <div class="card-body">
+                        <form name="frmValid" action="" >
+                            <div class="form-group">
+                                 <label for="">POLY NUMBER</label>
+                                 <input required type="number" ng-model="number" class="form-control" poly-Number name="txtNumber">
+                                 <span ng-show="frmValid.txtNumber.$invalid && frmValid.txtNumber.$dirty" class="text-danger">So nay khong chia het cho 9 va 2</span>
+                            </div> 
+                        </form>
+                       
+                    </div>
+                    <div class="card-footer">
+                         <button class="btn btn-primary"> Kiem tra</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+   
+   <script src="./bai5.js"></script>
+   
+</body>
+</html>
