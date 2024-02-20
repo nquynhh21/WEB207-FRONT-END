@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <script src="./angular.min.js"></script>
+</head>
+
+<body ng-app="myapp">
+    <br>
+    <div class="container">
+        <div ng-controller="myctrl1">
+            <form action="">
+                <div class="form-group">
+                    <label for="">Ho Va Ten:</label>
+                    <input type="text" placeholder="Nguyen Van A" ng-model="student.fullname" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="">Ngay Sinh:</label>
+                    <input type="text" placeholder="20-01-1995" ng-model="student.birthday" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="">Diem:</label>
+                    <input type="text" placeholder="8.5" ng-model="student.mark" class="form-control">
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-defaut btn-primary " ng-click="save()">Luu</button>
+                    <button class="btn btn-defaut btn-primary" ng-click="cancel()"> Huy</button>
+                </div>
+            </form>
+        </div>
+        <div ng-controller="myctrl2">
+            <table class="table table-triped">
+                 <tr>
+                    <th>Ho Va Ten</th>
+                    <th>Ngay Sinh</th>
+                    <th>Diem</th>
+                    <th></th>
+                 </tr>
+                 <tr>
+                    <td>{{students[0].fullname}}</td>
+                    <td>{{students[0].birthday}}</td>
+                    <td>{{students[0].mark}}</td>
+                    <td>
+                        <a href="#" ng-click="edit(0)">Sua</a>
+                    </td>
+                 </tr>
+                 <tr>
+
+                 </tr>
+            </table>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="./index.js"></script>
+</body>
+
+</html>
